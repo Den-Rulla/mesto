@@ -1,0 +1,13 @@
+.popup__job-input {
+  box-sizing: border-box;
+  padding: 13px 10px;
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  min-height: 35px;
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0, .2);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
