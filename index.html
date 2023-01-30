@@ -31,48 +31,6 @@
       </section>
       <section class="elements">
         <ul class="cards-list">
-          <li class="card">
-            <img src="./images/card-kchr.jpg" alt="Карачаевск" class="card__image">
-            <div class="card__title-cover">
-              <h2 class="card__title">Карачаевск</h2>
-              <button class="card__like card__like_active" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/card-elbrus.jpg" alt="Гора Эльбрус" class="card__image">
-            <div class="card__title-cover">
-              <h2 class="card__title">Гора Эльбрус</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/card-dombai.jpg" alt="Домбай" class="card__image">
-            <div class="card__title-cover">
-              <h2 class="card__title">Домбай</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/card-elbrus.jpg" alt="Гора Эльбрус" class="card__image">
-            <div class="card__title-cover">
-              <h2 class="card__title">Гора Эльбрус</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/card-dombai.jpg" alt="Домбай" class="card__image">
-            <div class="card__title-cover">
-              <h2 class="card__title">Домбай</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/card-kchr.jpg" alt="Карачаево-Черкессия" class="card__image">
-            <div class="card__title-cover">
-              <h2 class="card__title">Карачаево-Черкессия</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
         </ul>
       </section>
     </main>
@@ -80,17 +38,52 @@
       <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
   </div>
-  <section class="popup">
+  <section class="popup popup_type_edit">
     <div class="popup__container">
       <button class="popup__close-btn" type="button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__form" name="popup-form" action="#">
+      <form class="popup__form_type_edit" name="popup-edit-form" action="#">
         <input class="popup__input popup__input_type_name" name="name-input" type="text" placeholder="Ваше имя">
         <input class="popup__input popup__input_type_job" name="job-input" type="text" placeholder="Кем работаете?">
-        <button class="popup__save-btn" type="submit">Сохранить</button>
+        <button class="popup__submit-btn" type="submit">Сохранить</button>
       </form>
     </div>
   </section>
+  <section class="popup popup_type_add">
+    <div class="popup__container">
+      <button class="popup__close-btn popup__close-btn_type_add" type="button"></button>
+      <h3 class="popup__title">Новое место</h3>
+      <form class="popup__form_type_add" name="popup-card-add-form" action="#">
+        <input class="popup__input popup__input_type_card-title" name="card-title-input" type="text"
+          placeholder="Название">
+        <input class="popup__input popup__input_type_card-img-link" name="card-img-link-input" type="text"
+          placeholder="Ссылка на картинку">
+        <button class="popup__submit-btn popup__submit-btn_type_create" type="submit">Создать</button>
+      </form>
+    </div>
+  </section>
+  <section class="popup popup_type_img-scale">
+    <div class="popup__image-cover">
+      <figure class="popup__figure">
+        <img class="popup__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
+          alt="Камчатка">
+        <figcaption class="popup__caption">Камчатка</figcaption>
+      </figure>
+      <button class="popup__close-btn popup__close-btn_type_image" type="button"></button>
+    </div>
+  </section>
+
+  <template id="card-template">
+    <li class="card">
+      <button class="card__delete-btn" type="button"></button>
+      <img class="card__image">
+      <div class="card__title-cover">
+        <h2 class="card__title"></h2>
+        <button class="card__like" type="button"></button>
+      </div>
+    </li>
+  </template>
+
   <script src="./js/index.js"></script>
 </body>
 
