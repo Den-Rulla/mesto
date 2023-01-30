@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Рулла Денис">
-  <meta name="description" content="Проектная работа №4 студента Рулла Дениса. Курс Веб-разработчик. Когорта 63">
-  <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+  <meta name="description" content="Проектная работа №5 студента Рулла Дениса. Курс Веб-разработчик. Когорта 63">
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./pages/index.css">
   <title>Mesto</title>
 </head>
@@ -42,7 +42,7 @@
     <div class="popup__container">
       <button class="popup__close-btn" type="button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__form_type_edit" name="popup-edit-form" action="#">
+      <form class="popup__form popup__form_type_edit" name="popup-edit-form" action="#">
         <input class="popup__input popup__input_type_name" name="name-input" type="text" placeholder="Ваше имя">
         <input class="popup__input popup__input_type_job" name="job-input" type="text" placeholder="Кем работаете?">
         <button class="popup__submit-btn" type="submit">Сохранить</button>
@@ -51,14 +51,14 @@
   </section>
   <section class="popup popup_type_add">
     <div class="popup__container">
-      <button class="popup__close-btn popup__close-btn_type_add" type="button"></button>
+      <button class="popup__close-btn" type="button"></button>
       <h3 class="popup__title">Новое место</h3>
-      <form class="popup__form_type_add" name="popup-card-add-form" action="#">
+      <form class="popup__form popup__form_type_add" name="popup-card-add-form" action="#">
         <input class="popup__input popup__input_type_card-title" name="card-title-input" type="text"
           placeholder="Название">
         <input class="popup__input popup__input_type_card-img-link" name="card-img-link-input" type="text"
           placeholder="Ссылка на картинку">
-        <button class="popup__submit-btn popup__submit-btn_type_create" type="submit">Создать</button>
+        <button class="popup__submit-btn" type="submit">Создать</button>
       </form>
     </div>
   </section>
@@ -69,7 +69,7 @@
           alt="Камчатка">
         <figcaption class="popup__caption">Камчатка</figcaption>
       </figure>
-      <button class="popup__close-btn popup__close-btn_type_image" type="button"></button>
+      <button class="popup__close-btn" type="button"></button>
     </div>
   </section>
 
