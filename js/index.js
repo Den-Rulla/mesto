@@ -15,7 +15,6 @@ const addFormSubmitBtn = addForm.querySelector('.popup__submit-btn');
 
 const editBtn = document.querySelector('.profile__edit-button');
 const addBtn = document.querySelector('.profile__add-button');
-const likeBtn = document.querySelector('.card__like');
 
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
@@ -89,8 +88,7 @@ function openEditPopup() {
 }
 
 function openAddPopup() {
-  cardTitleInput.value = '';
-  cardImageInput.value = '';
+  addForm.reset();
   hideInputError(validationConfigConst, addForm, cardTitleInput);
   hideInputError(validationConfigConst, addForm, cardImageInput);
   submitButtonState(addFormSubmitBtn, true);

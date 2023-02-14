@@ -6,10 +6,10 @@
   color: red;
   display: block;
   min-height: 35px;
-  margin: -23px 5px 0 5px;
+  margin: -14px 3px 0 3px;
   opacity: 0;
 }
 
 .popup__error:last-of-type {
-  margin-top: 7px;
+  margin-top: 3px;
 }
