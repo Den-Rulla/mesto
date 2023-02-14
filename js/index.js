@@ -1,29 +1,3 @@
-const initialCards = [{
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  },
-];
-
 const popups = document.querySelectorAll('.popup');
 
 const editPopup = document.querySelector('.popup_type_edit');
@@ -35,6 +9,9 @@ const imgPopupCaption = imgPopup.querySelector('.popup__caption');
 
 const editForm = document.querySelector('.popup__form_type_edit');
 const addForm = document.querySelector('.popup__form_type_add');
+
+const editFormSubmitBtn = editForm.querySelector('.popup__submit-btn');
+const addFormSubmitBtn = addForm.querySelector('.popup__submit-btn');
 
 const editBtn = document.querySelector('.profile__edit-button');
 const addBtn = document.querySelector('.profile__add-button');
@@ -84,21 +61,39 @@ renderCards(initialCards);
 
 function openPopup(popupType) {
   popupType.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupEscBtn);
 }
 
 function closePopup(popupType) {
   popupType.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEscBtn);
+}
+
+function submitButtonState(submitBtn, isDisabled) {
+  if (isDisabled) {
+    submitBtn.setAttribute('disabled', 'disabled');
+    submitBtn.classList.add('popup__submit-btn_disabled');
+  } else {
+    submitBtn.removeAttribute('disabled');
+    submitBtn.classList.remove('popup__submit-btn_disabled');
+  }
 }
 
 function openEditPopup() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
+  hideInputError(validationConfigConst, editForm, nameInput);
+  hideInputError(validationConfigConst, editForm, jobInput);
+  submitButtonState(editFormSubmitBtn, false);
   openPopup(editPopup);
 }
 
 function openAddPopup() {
   cardTitleInput.value = '';
   cardImageInput.value = '';
+  hideInputError(validationConfigConst, addForm, cardTitleInput);
+  hideInputError(validationConfigConst, addForm, cardImageInput);
+  submitButtonState(addFormSubmitBtn, true);
   openPopup(addPopup);
 }
 
@@ -144,3 +139,9 @@ popups.forEach((popup) => {
     }
   });
 });
+
+function closePopupEscBtn(event) {
+  if (event.key === 'Escape') {
+    closePopup(document.querySelector('.popup_opened'));
+  }
+}
