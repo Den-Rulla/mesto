@@ -114,6 +114,8 @@ function handleEditFormSubmit(event) {
 function handleAddFormSubmit(event) {
   event.preventDefault();
 
+  submitButtonState(addFormSubmitBtn, true);
+
   const card = createCard({
     name: cardTitleInput.value,
     link: cardImageInput.value
