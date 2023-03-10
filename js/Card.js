@@ -25,13 +25,19 @@ export class Card {
     return this._element;
   }
 
+  _cardLikeToggler(event) {
+    event.target.classList.toggle('card__like_active');
+  }
+
+  _removeCard() {
+    this._element.remove();
+  }
+
   _setEventListeners() {
-    this._element.querySelector('.card__like').addEventListener("click", (event) => {
-      event.target.classList.toggle('card__like_active');
-    });
+    this._element.querySelector('.card__like').addEventListener("click", this._cardLikeToggler);
 
     this._element.querySelector('.card__delete-btn').addEventListener('click', () => {
-      this._element.remove();
+      this._removeCard();
     });
 
     this._cardImage.addEventListener('click', () => {
