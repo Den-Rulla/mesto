@@ -6,12 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Рулла Денис">
-  <meta name="description" content="Проектная работа №6 студента Рулла Дениса. Курс Веб-разработчик. Когорта 63">
+  <meta name="description" content="Проектная работа №7 студента Рулла Дениса. Курс Веб-разработчик. Когорта 63">
   <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./pages/index.css">
-  <script src="./js/initialcards.js" defer></script>
-  <script src="./js/index.js" defer></script>
-  <script src="./js/validate.js" defer></script>
+  <script src="./js/index.js" type="module"></script>
   <title>Mesto</title>
 </head>
 
@@ -52,7 +50,7 @@
         <input class="popup__input popup__input_type_job" name="job-input" type="text" placeholder="Кем работаете?"
           required minlength="2" maxlength="200">
         <span class="popup__error job-input-error"></span>
-        <button class="popup__submit-btn" disabled type="submit">Сохранить</button>
+        <button class="popup__submit-btn" type="submit">Сохранить</button>
       </form>
     </div>
   </section>
@@ -67,7 +65,7 @@
         <input class="popup__input popup__input_type_card-img-link" name="card-img-link-input" type="url"
           placeholder="Ссылка на картинку" required>
         <span class="popup__error card-img-link-input-error"></span>
-        <button class="popup__submit-btn" disabled type="submit">Создать</button>
+        <button class="popup__submit-btn" type="submit">Создать</button>
       </form>
     </div>
   </section>
