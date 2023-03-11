@@ -35,7 +35,7 @@ export class Card {
   }
 
   _setEventListeners() {
-    this._element.querySelector('.card__like').addEventListener("click", () => {
+    this._buttonLike.addEventListener("click", () => {
       this._toggleLike();
     });
 
