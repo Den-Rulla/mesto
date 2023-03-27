@@ -44,12 +44,12 @@
       <button class="popup__close-btn" type="button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
       <form class="popup__form popup__form_type_edit" name="popup-edit-form" action="#" novalidate>
-        <input class="popup__input popup__input_type_name" name="name-input" type="text" placeholder="Ваше имя" required
+        <input class="popup__input popup__input_type_name" name="name" type="text" placeholder="Ваше имя" required
           minlength="2" maxlength="40">
-        <span class="popup__error name-input-error"></span>
-        <input class="popup__input popup__input_type_job" name="job-input" type="text" placeholder="Кем работаете?"
-          required minlength="2" maxlength="200">
-        <span class="popup__error job-input-error"></span>
+        <span class="popup__error name-error"></span>
+        <input class="popup__input popup__input_type_job" name="job" type="text" placeholder="Кем работаете?" required
+          minlength="2" maxlength="200">
+        <span class="popup__error job-error"></span>
         <button class="popup__submit-btn" type="submit">Сохранить</button>
       </form>
     </div>
@@ -59,12 +59,12 @@
       <button class="popup__close-btn" type="button"></button>
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form popup__form_type_add" name="popup-card-add-form" action="#" novalidate>
-        <input class="popup__input popup__input_type_card-title" name="card-title-input" type="text"
-          placeholder="Название" required minlength="2" maxlength="30">
-        <span class="popup__error card-title-input-error"></span>
-        <input class="popup__input popup__input_type_card-img-link" name="card-img-link-input" type="url"
+        <input class="popup__input popup__input_type_card-title" name="title" type="text" placeholder="Название"
+          required minlength="2" maxlength="30">
+        <span class="popup__error title-error"></span>
+        <input class="popup__input popup__input_type_card-img-link" name="link" type="url"
           placeholder="Ссылка на картинку" required>
-        <span class="popup__error card-img-link-input-error"></span>
+        <span class="popup__error link-error"></span>
         <button class="popup__submit-btn" type="submit">Создать</button>
       </form>
     </div>
@@ -80,7 +80,7 @@
     </div>
   </section>
 
-  <template id="card-template">
+  <template id="card-template" class="card-template">
     <li class="card">
       <button class="card__delete-btn" type="button"></button>
       <img class="card__image">
