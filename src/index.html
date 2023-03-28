@@ -6,10 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Рулла Денис">
-  <meta name="description" content="Проектная работа №7 студента Рулла Дениса. Курс Веб-разработчик. Когорта 63">
-  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="./pages/index.css">
-  <script src="./pages/index.js" type="module"></script>
+  <meta name="description" content="Проектная работа №8 студента Рулла Дениса. Курс Веб-разработчик. Когорта 63">
+  <link rel="shortcut icon" href="<%=require('./images/favicon.png')%>">
   <title>Mesto</title>
 </head>
 
@@ -20,7 +18,7 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
+        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Аватар">
         <div class="profile__info">
           <div class="profile__title-cover">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -72,8 +70,7 @@
   <section class="popup popup_type_img-scale">
     <div class="popup__image-cover">
       <figure class="popup__figure">
-        <img class="popup__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
-          alt="Камчатка">
+        <img class="popup__image">
         <figcaption class="popup__caption">Камчатка</figcaption>
       </figure>
       <button class="popup__close-btn" type="button"></button>
