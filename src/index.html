@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Рулла Денис">
-  <meta name="description" content="Проектная работа №8 студента Рулла Дениса. Курс Веб-разработчик. Когорта 63">
+  <meta name="description" content="Проектная работа №9 студента Рулла Дениса. Курс Веб-разработчик. Когорта 63">
   <link rel="shortcut icon" href="<%=require('./images/favicon.png')%>">
   <title>Mesto</title>
 </head>
@@ -18,7 +18,10 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Аватар">
+        <div class="profile__avatar">
+          <img class="profile__avatar-image" src="<%=require('./images/avatar.jpg')%>" alt="Аватар">
+          <button class="profile__avatar-edit-btn" type="button"></button>
+        </div>
         <div class="profile__info">
           <div class="profile__title-cover">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -76,6 +79,25 @@
       <button class="popup__close-btn" type="button"></button>
     </div>
   </section>
+  <section class="popup popup_type_avatar">
+    <div class="popup__container">
+      <button class="popup__close-btn" type="button"></button>
+      <h3 class="popup__title">Обновить аватар</h3>
+      <form class="popup__form popup__form_type_avatar" name="popup-avatar-form" action="#" novalidate>
+        <input class="popup__input popup__input_type_avatar-link" name="avatar-link-input" type="url"
+          placeholder="Ссылка на картинку" required minlength="2" maxlength="30">
+        <span class="popup__error avatar-link-input-error"></span>
+        <button class="popup__submit-btn" disabled type="submit">Сохранить</button>
+      </form>
+    </div>
+  </section>
+  <section class="popup popup_type_delete-card">
+    <div class="popup__container">
+      <button class="popup__close-btn" type="button"></button>
+      <h3 class="popup__title">Вы уверены?</h3>
+      <button class="popup__submit-btn popup__submit-btn-delete-card" type="button">Да</button>
+    </div>
+  </section>
 
   <template id="card-template" class="card-template">
     <li class="card">
@@ -83,7 +105,10 @@
       <img class="card__image">
       <div class="card__title-cover">
         <h2 class="card__title"></h2>
-        <button class="card__like" type="button"></button>
+        <div class="card__likes-cover">
+          <button class="card__like" type="button"></button>
+          <p class="card__likes-counter">2</p>
+        </div>
       </div>
     </li>
   </template>
