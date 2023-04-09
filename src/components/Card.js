@@ -75,8 +75,8 @@ export class Card {
     this._buttonLike.classList.remove('card__like_active');
   }
 
-  getCardId() {
-    return this._cardId;
+  deleteCard() {
+    this._element.remove();
   }
 
   _setEventListeners() {

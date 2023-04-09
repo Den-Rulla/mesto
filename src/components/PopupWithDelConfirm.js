@@ -3,10 +3,18 @@ import {
 } from "./Popup.js";
 
 export class PopupWithDelConfirm extends Popup {
-  constructor(popupSelector, handleDeleteCard) {
+  constructor(popupSelector) {
     super(popupSelector);
-    this._handleDeleteCard = handleDeleteCard;
     this._confirmBtn = this._popup.querySelector('.popup__submit-btn');
+  }
+
+  setBtnState(isDisabled, text) {
+    this._confirmBtn.textContent = text;
+    if (isDisabled) {
+      this._confirmBtn.disabled = true;
+    } else {
+      this._confirmBtn.disabled = false;
+    }
   }
 
   open(cardId, card) {
@@ -15,14 +23,14 @@ export class PopupWithDelConfirm extends Popup {
     this._card = card;
   }
 
+  setClickAction(data) {
+    this._handleDeleteCard = data;
+  }
+
   setEventListeners() {
     this._confirmBtn.addEventListener('click', () => {
       this._handleDeleteCard(this._cardId, this._card);
     })
     super.setEventListeners();
-  }
-
-  deleteCard() {
-    this._card.remove();
   }
 }

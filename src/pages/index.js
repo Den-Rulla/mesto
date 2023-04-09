@@ -91,7 +91,20 @@ function createCard(data) {
     },
     handleDeleteCard: (cardId, card) => {
       popupWithDelConfirm.open(cardId, card);
-    }
+      popupWithDelConfirm.setClickAction((cardId) => {
+        popupWithDelConfirm.setBtnState(true, "Удаление...");
+        api
+          .deleteCard(cardId)
+          .then(() => {
+            popupWithDelConfirm.close();
+            newCard.deleteCard();
+          })
+          .catch((err) => console.log(err))
+          .finally(() => {
+            popupWithDelConfirm.setBtnState(false, "Да");
+          })
+      });
+    },
   }, '.card-template');
   return newCard.generateCard();
 }
@@ -113,7 +126,7 @@ const handleAddCardFormSubmit = (data) => {
     .addCard(data)
     .then((res) => {
       const cardElement = createCard(res);
-      cardsList.addItem(cardElement);
+      cardsList.addItemPrepend(cardElement);
       popupAddCard.close();
     })
     .catch((err) => console.log(err))
@@ -122,17 +135,7 @@ const handleAddCardFormSubmit = (data) => {
     })
 }
 
-const handleDeleteCard = (cardId) => {
-  api
-    .deleteCard(cardId)
-    .then(() => {
-      popupWithDelConfirm.deleteCard();
-      popupWithDelConfirm.close();
-    })
-    .catch((err) => console.log(err))
-}
-
-const popupWithDelConfirm = new PopupWithDelConfirm('.popup_type_delete-card', (cardId) => handleDeleteCard(cardId));
+const popupWithDelConfirm = new PopupWithDelConfirm('.popup_type_delete-card');
 
 popupWithDelConfirm.setEventListeners();
 

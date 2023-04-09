@@ -7,6 +7,10 @@ export class Section {
   }
 
   addItem(item) {
+    this._container.append(item);
+  }
+
+  addItemPrepend(item) {
     this._container.prepend(item);
   }
 
